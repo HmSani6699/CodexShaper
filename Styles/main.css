@@ -1,19 +1,56 @@
-body {
-  font-family: Arial, sans-serif;
+* {
+  font-family: "EB Garamond", serif;
   margin: 0;
   padding: 0;
 }
 
 .header {
-  background-color: #3498db;
+  width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px 0 20px;
+  background-color: #0C30AE;
+  height: 100px;
+  border-bottom: 2px solid white;
+}
+.header .nav-container {
+  height: 109px;
+  display: flex;
+  justify-content: space-between;
+}
+.header .nav-container .nav-logo {
+  border-right: 2px solid white;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
 }
-.header h1 {
-  color: white;
-  margin: 0;
+.header .nav-container .nav-logo img {
+  width: 85px;
+  height: 51px;
+}
+.header .nav-container .nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .nav-container .nav-menu .bag-icon {
+  width: 20px;
+  height: 20px;
+}
+.header .nav-container .nav-menu .menu-icon {
+  width: 60px;
+  height: 20px;
+  margin-left: 25px;
+}
+
+.banner-container {
+  width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px 0 20px;
+  height: 100vh;
+  background-color: #0C30AE;
 }
 
 /*# sourceMappingURL=main.css.map */
