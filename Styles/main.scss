@@ -1,124 +1,124 @@
-// ========> variables scss file <=======//
+// ========> Variables SCSS File <======= //
 $primary-color: #0C30AE;
 $secondary-color: #2ecc71;
 
-
-// =======> mixins scss  file <=======//
+// =======> Mixins SCSS File <======= //
 @mixin max-width {
-    width: 1200px;
+    width: 1300px;
     margin: auto;
-    // overflow: hidden;
 }
+
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 @mixin flex-between {
     display: flex;
     justify-content: space-between;
-    // align-items: center;
 }
 
-// main.scss
-*{
+// =======> Main SCSS <======= //
+* {
     font-family: 'EB Garamond', serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-
-
-
 .header {
-   @include max-width;
+    @include max-width;
     background-color: $primary-color;
     height: 300px;
     position: relative;
-overflow: hidden;
+    overflow: hidden;
 
-.nav-container{
-    height: 90px;
-   @include flex-between;
-}
+    .nav-container {
+        height: 90px;
+        @include flex-between;
 
-.nav-container .logo-container{
-    width: 90%;
-    border-bottom:2px solid white
-}
+        .logo-container {
+            width: 90%;
+            border-bottom: 2px solid white;
 
-.nav-container .logo-container .logo{
-    width: 150px;
-    height: 100%;
-    border-right: 2px solid white;
-    @include flex-center;
-}
+            .logo {
+                width: 150px;
+                height: 100%;
+                border-right: 2px solid white;
+                @include flex-center;
 
-.nav-container .logo-container .logo img {
-       width: 85px;
-       height: 51px;
-}
+                img {
+                    width: 85px;
+                    height: 51px;
+                }
+            }
+        }
 
-.nav-container .nav-menu{
-    @include flex-center;
-    padding-right: 15px;
-}
+        .nav-menu {
+            @include flex-center;
+            padding-right: 15px;
 
-.nav-container .nav-menu .bag-icon{
-      width: 20px;
-      height: 20px;
-    }
-.nav-container .nav-menu .menu-icon{
-      width: 60px;
-      height: 20px;
-      margin-left: 15px;
-    }  
-    
-         .marquee-container {
-             position: absolute;
-             top: 84px;
-             right: -76px;
-             rotate: 45deg;
-             z-index: 2;
-          
-    
-         }
-}
+            .bag-icon {
+                width: 20px;
+                height: 20px;
+            }
 
-
-
-
- // =====> Banner Section <=====//
- .main-container {
-//     @include max-width;
-//      height: 100vh;
-//      background-color: $primary-color;
-//     overflow: hidden;
-.scrolling-text {
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        // justify-content: center;
-        align-items: center;
-        background-color: black;
-
-        .rail {
-            display: flex;
-
-            h4 {
-                white-space: nowrap;
-                font-size: 200px;
-                font-weight: 900;
-                letter-spacing: ls(120);
-                line-height: 1em;
-                margin: 0 2rem 0 0;
-                color: white;
+            .menu-icon {
+                width: 60px;
+                height: 20px;
+                margin-left: 15px;
             }
         }
     }
- 
-   
- }
+}
+
+// =======> Marquee Animation <======= //
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.marquee-container {
+    width: 380px;
+    height: 58px;
+    background-color: #19ec60;
+    overflow: hidden;
+    position: absolute;
+    top: 112px;
+    right: -267px;
+    transform: translate(-50%, -50%) rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    div {
+        font-size: 30px;
+        font-weight: 700;
+        color: #000;
+        white-space: nowrap;
+        animation: scroll 20s linear infinite;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            height: 20px;
+            width: auto;
+        }
+    }
+}
+
+// =======> Banner Section <======= //
+.main-container {
+    // Uncomment to use
+    // @include max-width;
+    // height: 100vh;
+    // background-color: $primary-color;
+    // overflow: hidden;
+}

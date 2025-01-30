@@ -6,7 +6,7 @@
 }
 
 .header {
-  width: 1200px;
+  width: 1300px;
   margin: auto;
   background-color: #0C30AE;
   height: 300px;
@@ -49,33 +49,41 @@
   height: 20px;
   margin-left: 15px;
 }
-.header .marquee-container {
-  position: absolute;
-  top: 84px;
-  right: -76px;
-  rotate: 45deg;
-  z-index: 2;
-}
 
-.main-container .scrolling-text {
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.marquee-container {
+  width: 380px;
+  height: 58px;
+  background-color: #19ec60;
   overflow: hidden;
-  width: 100%;
-  height: 100vh;
+  position: absolute;
+  top: 112px;
+  right: -267px;
+  transform: translate(-50%, -50%) rotate(45deg);
   display: flex;
   align-items: center;
-  background-color: black;
+  justify-content: center;
 }
-.main-container .scrolling-text .rail {
-  display: flex;
-}
-.main-container .scrolling-text .rail h4 {
+.marquee-container div {
+  font-size: 30px;
+  font-weight: 700;
+  color: #000;
   white-space: nowrap;
-  font-size: 200px;
-  font-weight: 900;
-  letter-spacing: ls(120);
-  line-height: 1em;
-  margin: 0 2rem 0 0;
-  color: white;
+  animation: scroll 20s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.marquee-container div img {
+  height: 20px;
+  width: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
